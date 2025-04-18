@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import "react-native-reanimated";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -12,7 +13,11 @@ export const unstable_settings = {
 };
 
 export default function RootLayout() {
-  return <RootLayoutNav />;
+  return (
+    <SafeAreaProvider>
+      <RootLayoutNav />
+    </SafeAreaProvider>
+  );
 }
 
 function RootLayoutNav() {

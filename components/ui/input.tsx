@@ -8,16 +8,20 @@ export interface inputProps {
 
 export default function Input(props: inputProps) {
   return (
-    <TextInput placeholder={props.placeholder} style={styles.input}></TextInput>
+    <TextInput
+      placeholder={props.placeholder}
+      style={styles.input}
+      returnKeyType="send"
+    ></TextInput>
   );
 }
 
 const styles = StyleSheet.create({
   input: {
-    width: ITEM_WIDTH,
-    margin: 12,
-    borderWidth: 1,
+    flex: 1,
     padding: 10,
     borderRadius: 8,
+    marginLeft: 8,
+    backgroundColor: "#fff",
   },
 });
