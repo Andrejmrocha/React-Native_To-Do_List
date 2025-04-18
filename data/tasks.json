@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Estudar React Native",
+    "isCompleted": false
+  },
+  {
+    "id": "2",
+    "title": "Fazer exercícios físicos",
+    "isCompleted": true
+  },
+  {
+    "id": "3",
+    "title": "Configurar ambiente de desenvolvimento",
+    "isCompleted": false
+  },
+  {
+    "id": "4",
+    "title": "Planejar próximos projetos",
+    "isCompleted": false
+  }
+]
