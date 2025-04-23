@@ -9,13 +9,16 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import { useEffect } from "react";
+import { useTasks } from "@/utils/TaskContext";
+
+interface taskComponentProps extends Task {}
 
 export default function TaskComponent({
   id,
   title,
   isCompleted,
-  onToggle,
-}: Task) {
+}: taskComponentProps) {
+  const { toggleTask } = useTasks();
   const scale = useSharedValue(1);
   const opacity = useSharedValue(1);
 
@@ -52,7 +55,7 @@ export default function TaskComponent({
       >
         {title}
       </AnimatedText>
-      <Pressable onPress={() => onToggle?.(id)}>
+      <Pressable onPress={() => toggleTask(id)}>
         <AnimatedIcon
           name={
             isCompleted
@@ -71,12 +74,16 @@ export default function TaskComponent({
 const styles = StyleSheet.create({
   task: {
     flex: 1,
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    alignSelf: "center",
     paddingVertical: 20,
     paddingHorizontal: 10,
     backgroundColor: "white",
-    marginHorizontal: 8,
+    marginTop: 8,
+    borderRadius: 8,
   },
   completedTitle: {
     textDecorationLine: "line-through",
